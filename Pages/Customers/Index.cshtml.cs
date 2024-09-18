@@ -19,7 +19,7 @@ namespace CRUD.Pages.Customers
             try
             {
                 string connectionString = "Server=LAPTOP-N6PCLAVT\\SQLEXPRESS01;Database=crmDB;Trusted_Connection=True;TrustServerCertificate=True;";
-                string sqlCommand = "SELECT * FROM customers ORDER BY id ASC";
+                string sqlQuery = "SELECT * FROM customers ORDER BY id ASC";
 
                 // object of type SqlConnection
                 using SqlConnection connection = new(connectionString);
@@ -27,7 +27,7 @@ namespace CRUD.Pages.Customers
                 connection.Open();
 
                 // create command
-                using SqlCommand command = new(sqlCommand, connection);
+                using SqlCommand command = new(sqlQuery, connection);
                 // create reader
                 using SqlDataReader reader = command.ExecuteReader();
                 // read row
