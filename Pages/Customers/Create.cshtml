@@ -1,0 +1,78 @@
+@page
+@model CRUD.Pages.Customers.Create
+@{
+    ViewData["Title"] = "Create";
+}
+<div class="row">
+    <div class="col-md-8 mx-auto rounded border p-4">
+        <h2 class="text-center mb-5">New Customer</h2>
+
+        <form method="POST">
+            <!-- First Name and Last Name in the same row -->
+            <div class="row mb-3">
+                <div class="col-sm-6">
+                    <label class="col-form-label">First Name*</label>
+                    <input class="form-control" asp-for="Firstname">
+                    @* Display validation error *@
+                    <span asp-validation-for="Firstname" class="text-danger"></span>
+                </div>
+                <div class="col-sm-6">
+                    <label class="col-form-label">Last Name*</label>
+                    <input class="form-control" asp-for="Lastname">
+                    @* Display validation error *@
+                    <span asp-validation-for="Lastname" class="text-danger"></span>
+                </div>
+            </div>
+
+            <!-- Email remains in its own row -->
+            <div class="row mb-3">
+                <div class="col-sm-6">
+                    <label class="col-sm-4 col-form-label">Email*</label>
+                    <input class="form-control" asp-for="Email">
+                    @* Display validation error *@
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="col-sm-6">
+                    <label class="col-form-label">Phone</label>
+                    <input class="form-control" asp-for="Phone">
+                </div>
+            </div>
+
+            <!-- Phone and Address in the same row -->
+            <div class="row mb-3">
+                <div class="col-sm-12">
+                    <label class="col-form-label">Address</label>
+                    <input class="form-control" asp-for="Address">
+                </div>
+            </div>
+
+            <!-- Company field -->
+            <div class="row mb-3">
+                <div class="col-sm-12">
+                    <label class="col-sm-4 col-form-label">Company*</label>
+                    <input class="form-control" asp-for="Company">
+                    @* Display validation error *@
+                    <span asp-validation-for="Company" class="text-danger"></span>
+                </div>
+            </div>
+
+            <!-- Notes field -->
+            <div class="row mb-3">
+                <div class="col-sm-12">
+                    <label class="col-sm-4 col-form-label">Notes</label>
+                    <textarea class="form-control" asp-for="Notes"></textarea>
+                </div>
+            </div>
+
+            <!-- Submit and Cancel buttons -->
+            <div class="row text-center">
+                <div class="col-sm-6 d-grid">
+                    <button type="submit" class="btn btn-primary">Create</button>
+                </div>
+                <div class="col-sm-6 d-grid">
+                    <a class="btn btn-outline-primary" href="/Customers/Index" role="button">Cancel</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
