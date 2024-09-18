@@ -12,14 +12,14 @@ namespace CRUD.Pages.Customers
     public class Index : PageModel
     {
         // list of customers
-        public List<CustomerInfo> CustomerList {get; set;} = [];
+        public List<CustomerInfo> CustomerList {get; set;} = new List<CustomerInfo>();
         public void OnGet()
         {
             // conect to DB and read customers
             try
             {
-                string connectionString = "Server=.;Database=crmDB;Trusted_Connection=True;TrustServerCertificate=True;";
-                string sqlCommand = "SELECT * FROM customers ORDER BY id DESC";
+                string connectionString = "Server=LAPTOP-N6PCLAVT\\SQLEXPRESS01;Database=crmDB;Trusted_Connection=True;TrustServerCertificate=True;";
+                string sqlCommand = "SELECT * FROM customers ORDER BY id ASC";
 
                 // object of type SqlConnection
                 using SqlConnection connection = new(connectionString);
