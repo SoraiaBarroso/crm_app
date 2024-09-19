@@ -19,7 +19,7 @@ namespace CRUD.Pages.Customers
             try
             {
                 string connectionString = "Server=LAPTOP-N6PCLAVT\\SQLEXPRESS01;Database=crmDB;Trusted_Connection=True;TrustServerCertificate=True;";
-                string sqlQuery = "SELECT * FROM customers ORDER BY id ASC";
+                string sqlQuery = "SELECT * FROM customers ORDER BY id DESC";
 
                 // object of type SqlConnection
                 using SqlConnection connection = new(connectionString);
